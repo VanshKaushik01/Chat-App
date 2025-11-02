@@ -1,6 +1,8 @@
 import axios from "axios";
 
+// In development: use proxy configured in vite.config.js
+// In production: use relative path
 export const axiosInstance = axios.create({
-  baseURL: import.meta.env.MODE === "development" ? "http://localhost:5001/api" : "/api",
+  baseURL: "/api",
   withCredentials: true,
 });
